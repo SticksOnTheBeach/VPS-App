@@ -13,18 +13,17 @@ namespace VPSControl
         {
             InitializeComponent();
 
-            // Init services
+            // services
             Database = new Database();
             SshService = new SshService();
 
-            // Ensure DB
+            // DB
             Database.Init();
 
-            // Navigate to login
+            // login
             MainFrame.Content = new LoginPage(GoToPage);
         }
 
-        // simple navigation callback
         private void GoToPage(string pageName)
         {
             switch (pageName)
@@ -42,4 +41,5 @@ namespace VPSControl
             }
         }
     }
+
 }
