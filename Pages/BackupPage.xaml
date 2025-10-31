@@ -1,0 +1,46 @@
+﻿<Page x:Class="VPSControl.Pages.BackupPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Background="#f7f8fa" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Barre supérieure -->
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+            <!-- Source -->
+            <TextBox x:Name="SourceBox"
+                     Text="/var/www or /etc"
+                     Foreground="Gray"
+                     GotFocus="TextBox_GotFocus"
+                     LostFocus="TextBox_LostFocus"
+                     Width="420"/>
+
+            <!-- Dossier de sauvegarde -->
+            <TextBox x:Name="BackupDirBox"
+                     Text="/var/backups"
+                     Foreground="Gray"
+                     GotFocus="TextBox_GotFocus"
+                     LostFocus="TextBox_LostFocus"
+                     Width="300"
+                     Margin="6,0,0,0"/>
+
+            <!-- Choix de destination -->
+            <ComboBox x:Name="DestCombo" Width="180" Margin="6,0,0,0">
+                <ComboBoxItem>Server</ComboBoxItem>
+                <ComboBoxItem>Local</ComboBoxItem>
+            </ComboBox>
+
+            <!-- Bouton -->
+            <Button Content="Create Backup"
+                    Click="CreateBackup_Click"
+                    Margin="6,0,0,0"/>
+        </StackPanel>
+
+        <!-- Liste des sauvegardes -->
+        <ListBox x:Name="BackupsList"
+                 Grid.Row="1"
+                 Background="White"/>
+    </Grid>
+</Page>

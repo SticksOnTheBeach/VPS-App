@@ -1,0 +1,30 @@
+﻿<Page x:Class="VPSControl.Pages.DashboardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Dashboard">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <StackPanel Grid.Column="0" Background="White">
+            <TextBlock Text="VPS Control" FontSize="20" FontWeight="Bold" Margin="10"/>
+            <Button Content="Dashboard" Name="BtnHome" Click="ShowHome" Margin="5" Style="{StaticResource FrostedButtonStyle}"
+                    Foreground="Black"/>
+            <Button Content="Sauvegardes" Name="BtnBackup" Click="ShowBackup" Margin="5" Style="{StaticResource FrostedButtonStyle}"
+                    Foreground="Black"/>
+            <Button Content="FTP" Name="BtnFTP" Click="ShowFTP" Margin="5" Style="{StaticResource FrostedButtonStyle}"
+                    Foreground="Black"/>
+            <Button Content="Paramètres" Name="BtnSettings" Click="ShowSettings" Margin="5" Style="{StaticResource FrostedButtonStyle}"
+                    Foreground="Black"/>
+            <Separator Margin="5"/>
+            <Button Content="Logout" Click="Logout_Click" Margin="5" Style="{StaticResource FrostedButtonStyle}"
+                    Foreground="Black"/>
+        </StackPanel>
+
+        <!-- Main -->
+        <Frame x:Name="ContentFrame" Grid.Column="1" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Page>
